@@ -103,5 +103,5 @@ spec:
     - name: {{ $int.name | quote }}
       macAddress: {{ $int.mac | quote }}
 {{- end }}
-{{- end }}
 ---
+{{- end }}
