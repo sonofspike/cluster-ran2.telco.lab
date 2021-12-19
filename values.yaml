@@ -48,7 +48,7 @@ nodes:
     #
     bmc_username: root
     bmc_password: password
-    bmc_address: http://10.198.7.135:8080/redfish/v1/Systems/4e1aef8e-ab32-4ebe-bcba-39ef1c443ea5
+    bmc_address: redfish-virtualmedia+http://10.198.7.135:8080/redfish/v1/Systems/4e1aef8e-ab32-4ebe-bcba-39ef1c443ea5
 
   - name: "m1"
     site: site1
@@ -81,7 +81,7 @@ nodes:
     #
     bmc_username: root
     bmc_password: password
-    bmc_address: http://10.198.7.136:8080/redfish/v1/Systems/7a7df888-3bc8-493f-92fb-937f34099257
+    bmc_address: redfish-virtualmedia+http://10.198.7.136:8080/redfish/v1/Systems/7a7df888-3bc8-493f-92fb-937f34099257
 
   - name: "m2"
     site: site1
@@ -114,4 +114,4 @@ nodes:
     #
     bmc_username: root
     bmc_password: password
-    bmc_address: http://10.198.7.137:8080/redfish/v1/Systems/ba1b9a92-8248-4fe4-8031-5c6217f6bd99
+    bmc_address: redfish-virtualmedia+http://10.198.7.137:8080/redfish/v1/Systems/ba1b9a92-8248-4fe4-8031-5c6217f6bd99
