@@ -9,23 +9,28 @@ metadata:
 spec:
   config:
     interfaces:
+{{- $ipaddress := .IP -}}
+{{- $prefix := .prefix_length -}}
+{{- $bondname := .bond_name -}}
+{{- $bondmode := .bond_mode -}}
+{{- $intmtu := .int_mtu -}}
 {{- if eq (toString .bond_enable) "true" }}
   {{- range $index, $int := .interfaces }}
     {{- if eq $index 0 }}  
-      - name: {{ .bond_name }}
+      - name: {{ $bondname }}
         type: bond
         state: up
-        mtu: {{ .int_mtu }}
+        mtu: {{ $intmtu }}
         ipv6:
           enabled: false
         ipv4:
           enabled: true
           address:
-            - ip: {{ .IP }}
-              prefix-length: {{ .prefix_length }}
+            - ip: {{ $ipaddress }}
+              prefix-length: {{ $prefix }}
           dhcp: false
         link-aggregation:
-          mode: {{ .bond_mode }}
+          mode: {{ $bondmode }}
           options:
             miimon: '150'
             primary: {{ $int.name | quote }}
@@ -43,7 +48,7 @@ spec:
     {{- else }}
         state: down
     {{- end }}
-        mtu: {{ .int_mtu }}
+        mtu: {{ $intmtu }}
         ipv6:
           enabled: false
         ipv4:
@@ -55,20 +60,20 @@ spec:
       - name: {{ $int.name }}
         type: ethernet
         state: up
-        mtu: {{ .int_mtu }}
+        mtu: {{ $intmtu }} 
         ipv6:
           enabled: false
         ipv4:
           enabled: true
           address:
-            - ip: {{ .IP }}
-              prefix-length: {{ .prefix_length }}
+            - ip: {{ $ipaddressP }}
+              prefix-length: {{ $prefix }}
           dhcp: false
     {{- else }}
       - name: {{ $int.name }}
         type: ethernet
         state: down
-        mtu: {{ .int_mtu }}
+        mtu: {{ $intmtu }}
         ipv6:
           enabled: false
         ipv4:
