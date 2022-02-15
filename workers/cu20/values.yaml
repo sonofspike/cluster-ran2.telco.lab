@@ -2,7 +2,7 @@ node:
   site: site1
   name: "cu20"
   role: worker
-  tecnolhogy: 5gmmw
+  technology: 5gmmw
   net_function: cu_001
   hw_profile: lenovo-sr650
   # hint to try and deploy the RHCOS tro the correct disk
