@@ -7,7 +7,7 @@ node:
   hw_profile: lenovo-sr650
   # hint to try and deploy the RHCOS tro the correct disk
   # for given platform including VMs
-  boot_dev_hint: /dev/sda
+  boot_dev_hint: /dev/sdd
   # set to true if not installing on SSD or NVMe, example spinning HDD
   boot_spinner_hint: false
   lso: "true"
